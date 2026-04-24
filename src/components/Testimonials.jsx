@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: 'Meera Nair',
     role: 'Chronic Migraine Patient',
-    text: 'After years of relying on painkillers, HomoCare gave me a constitutional remedy that reduced my migraines by 90% within three months. I feel like myself again — naturally.',
+    text: 'After years of relying on painkillers, Dr. Shoaib Mansuri Homeopathic Clinic gave me a constitutional remedy that reduced my migraines by 90% within three months. I feel like myself again — naturally.',
     rating: 5,
   },
   {

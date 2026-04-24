@@ -1,50 +1,123 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-const features = [
-  {
-    icon: '🌱',
-    title: 'All-Natural Remedies',
-    desc: 'Every remedy is derived from plants, minerals, and natural sources — zero side effects.',
-  },
-  {
-    icon: '🩺',
-    title: 'Certified Practitioners',
-    desc: 'Our homeopaths hold internationally recognised qualifications with decades of experience.',
-  },
-  {
-    icon: '📅',
-    title: 'Easy Scheduling',
-    desc: 'Book in-person or online consultations at a time that suits your lifestyle.',
-  },
-  {
-    icon: '💚',
-    title: 'Holistic Wellness',
-    desc: 'We treat the whole person — mind, body, and spirit — not just the symptoms.',
-  },
-]
-
 export default function Features() {
+  const [form, setForm] = useState({
+    patientName: '', age: '', gender: '', complaint: '', followUp: '', address: ''
+  })
+
+  const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    alert('Patient record saved successfully!')
+    setForm({ patientName: '', age: '', gender: '', complaint: '', followUp: '', address: '' })
+  }
+
   return (
-    <section className="bg-[#1b4332] py-16">
-      <div className="max-w-7xl mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {features.map((f, i) => (
-          <motion.div
-            key={f.title}
-            className="flex items-start gap-4 text-white"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-          >
-            <div className="flex-shrink-0 w-16 h-16 bg-[#52b788]/20 rounded-2xl flex items-center justify-center text-3xl">
-              {f.icon}
+    <section className="bg-[#1b4332] py-14">
+      <div className="max-w-7xl mx-auto px-4">
+        <motion.form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-end"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Patient Name */}
+          <div className="flex flex-col gap-1">
+            <label className="text-[#95d5b2] text-xs font-semibold uppercase tracking-wider">Patient Name</label>
+            <input
+              name="patientName"
+              value={form.patientName}
+              onChange={handleChange}
+              placeholder="Full name"
+              required
+              className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-[#52b788] transition-colors"
+            />
+          </div>
+
+          {/* Age */}
+          <div className="flex flex-col gap-1">
+            <label className="text-[#95d5b2] text-xs font-semibold uppercase tracking-wider">Age</label>
+            <input
+              name="age"
+              value={form.age}
+              onChange={handleChange}
+              placeholder="e.g. 34"
+              type="number"
+              min="0"
+              max="120"
+              required
+              className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-[#52b788] transition-colors"
+            />
+          </div>
+
+          {/* Gender */}
+          <div className="flex flex-col gap-1">
+            <label className="text-[#95d5b2] text-xs font-semibold uppercase tracking-wider">Gender</label>
+            <select
+              name="gender"
+              value={form.gender}
+              onChange={handleChange}
+              required
+              className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#52b788] transition-colors"
+            >
+              <option value="" className="text-gray-800">Select</option>
+              <option value="male" className="text-gray-800">Male</option>
+              <option value="female" className="text-gray-800">Female</option>
+              <option value="other" className="text-gray-800">Other</option>
+            </select>
+          </div>
+
+          {/* Chief Complaint */}
+          <div className="flex flex-col gap-1">
+            <label className="text-[#95d5b2] text-xs font-semibold uppercase tracking-wider">Complaint</label>
+            <input
+              name="complaint"
+              value={form.complaint}
+              onChange={handleChange}
+              placeholder="Chief complaint"
+              required
+              className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-[#52b788] transition-colors"
+            />
+          </div>
+
+          {/* Follow Up */}
+          <div className="flex flex-col gap-1">
+            <label className="text-[#95d5b2] text-xs font-semibold uppercase tracking-wider">Follow Up</label>
+            <input
+              name="followUp"
+              value={form.followUp}
+              onChange={handleChange}
+              type="date"
+              className="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-[#52b788] transition-colors"
+            />
+          </div>
+
+          {/* Address + Submit */}
+          <div className="flex flex-col gap-1">
+            <label className="text-[#95d5b2] text-xs font-semibold uppercase tracking-wider">Address</label>
+            <div className="flex gap-2">
+              <input
+                name="address"
+                value={form.address}
+                onChange={handleChange}
+                placeholder="City / Area"
+                className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-[#52b788] transition-colors"
+              />
+              <motion.button
+                type="submit"
+                className="bg-[#52b788] text-white px-4 py-3 rounded-xl font-semibold text-sm hover:bg-[#2d6a4f] transition-colors flex-shrink-0"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                title="Save Patient"
+              >
+                ✓
+              </motion.button>
             </div>
-            <div>
-              <h3 className="font-bold text-lg mb-1">{f.title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed">{f.desc}</p>
-            </div>
-          </motion.div>
-        ))}
+          </div>
+        </motion.form>
       </div>
     </section>
   )

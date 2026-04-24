@@ -54,7 +54,7 @@ export default function About() {
             Restoring Health Through the Power of Nature
           </h2>
           <p className="text-gray-500 mb-4 leading-relaxed">
-            At HomoCare, we believe the body has an innate ability to heal itself when given the right support. Our homeopathic clinic has been guiding patients toward natural wellness for over two decades, treating root causes rather than masking symptoms.
+            At Dr. Shoaib Mansuri Homeopathic Clinic, we believe the body has an innate ability to heal itself when given the right support. Our clinic has been guiding patients toward natural wellness for over two decades, treating root causes rather than masking symptoms.
           </p>
           <p className="text-gray-500 mb-8 leading-relaxed">
             From acute conditions to long-standing chronic illnesses, our practitioners design individualised remedy plans that work in harmony with your body's own healing intelligence.

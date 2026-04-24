@@ -18,10 +18,10 @@ export default function Footer() {
         >
           <div className="flex items-center gap-2 mb-4">
             <div className="w-10 h-10 bg-[#52b788] rounded-full flex items-center justify-center text-lg">🌿</div>
-            <span className="text-2xl font-bold">Homo<span className="text-[#52b788]">Care</span></span>
+            <span className="text-base font-bold leading-tight">Dr. Shoaib Mansuri<br/><span className="text-[#52b788] text-sm font-semibold">Homeopathic Clinic</span></span>
           </div>
           <p className="text-white/50 text-sm leading-relaxed mb-6">
-            Providing compassionate, natural homeopathic care to families for over 20 years. Your wellness is our calling.
+            Dr. Shoaib Mansuri Homeopathic Clinic provides compassionate, natural care to families for over 20 years. Your wellness is our calling.
           </p>
           <div className="flex gap-3">
             {['f', 't', 'in', 'yt'].map(s => (
@@ -86,13 +86,13 @@ export default function Footer() {
           <div className="mt-6 space-y-2 text-sm text-white/50">
             <div className="flex items-center gap-2"><span>📍</span> 45 Wellness Ave, Green District, NY</div>
             <div className="flex items-center gap-2"><span>📞</span> +1 (800) 246-8910</div>
-            <div className="flex items-center gap-2"><span>✉️</span> hello@homocare.com</div>
+            <div className="flex items-center gap-2"><span>✉️</span> info@drshoaibmansuri.com</div>
           </div>
         </motion.div>
       </div>
 
       <div className="border-t border-white/10 py-6 text-center text-white/40 text-sm">
-        © {new Date().getFullYear()} HomoCare Homeopathic Clinic. All rights reserved.
+        © {new Date().getFullYear()} Dr. Shoaib Mansuri Homeopathic Clinic. All rights reserved.
       </div>
     </footer>
   )

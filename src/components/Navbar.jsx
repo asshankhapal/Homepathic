@@ -30,7 +30,7 @@ export default function Navbar() {
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
               </svg>
-              hello@homocare.com
+              info@drshoaibmansuri.com
             </span>
           </div>
           <div className="flex gap-3 text-xs">
@@ -53,7 +53,7 @@ export default function Navbar() {
             <div className="w-10 h-10 bg-[#2d6a4f] rounded-full flex items-center justify-center">
               <span className="text-white text-lg">🌿</span>
             </div>
-            <span className="text-2xl font-bold text-[#1b4332]">Homo<span className="text-[#52b788]">Care</span></span>
+            <span className="text-lg font-bold text-[#1b4332] leading-tight">Dr. Shoaib Mansuri<br/><span className="text-[#52b788] text-sm font-semibold">Homeopathic Clinic</span></span>
           </a>
 
           <ul className="hidden md:flex gap-8">
